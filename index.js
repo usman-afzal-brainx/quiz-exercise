@@ -143,7 +143,11 @@ function selectQuestions() {
     let index = questionIndex[j];
     selectedQuestion[j] = questions[index];
   }
-  console.log(questionIndex);
   return selectedQuestion;
 }
-console.log(selectQuestions());
+
+function displayQuestions() {
+  console.log(selectQuestions());
+}
+
+displayQuestions();
