@@ -160,14 +160,12 @@ function renderFirstQuestion(q) {
 
   element.children[10].setAttribute("value", q.option4);
   element.children[11].innerHTML = q.option4;
-
-  console.log(element);
 }
 
-function cloneElement() {
+function populateQuestions() {
   let i = 1;
   let len = generateQuestions().length;
-  let j = 0;
+  let j = 4;
 
   let q = generateQuestions();
   renderFirstQuestion(q[0]);
@@ -185,18 +183,22 @@ function cloneElement() {
     cln.children[10].name = i;
 
     cln.children[1].id = ++j;
+    cln.children[1].setAttribute("value", q[i].option1);
     cln.children[2].setAttribute("for", j);
     cln.children[2].innerHTML = q[i].option1;
 
     cln.children[4].id = ++j;
+    cln.children[4].setAttribute("value", q[i].option2);
     cln.children[5].setAttribute("for", j);
     cln.children[5].innerHTML = q[i].option2;
 
     cln.children[7].id = ++j;
+    cln.children[7].setAttribute("value", q[i].option3);
     cln.children[8].setAttribute("for", j);
     cln.children[8].innerHTML = q[i].option3;
 
     cln.children[10].id = ++j;
+    cln.children[10].setAttribute("value", q[i].option4);
     cln.children[11].setAttribute("for", j);
     cln.children[11].innerHTML = q[i].option4;
 
@@ -204,4 +206,20 @@ function cloneElement() {
     i++;
   }
 }
-cloneElement();
+
+function getChecked() {
+  for (let i = 1; i < 17; i++) {
+    let element = document.getElementById(`${i}`);
+    if (element.checked === true) {
+      console.log(element.value);
+    }
+  }
+}
+
+function displayChecked() {
+  getChecked();
+
+  return false;
+}
+
+populateQuestions();

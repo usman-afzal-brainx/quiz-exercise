@@ -9,21 +9,21 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <form>
+    <form onsubmit="return displayChecked()">
       <div id="main">
         <div id="question">
           <p>Question:</p>
-          <input type="radio" id="a" name="options" value="" />
-          <label for="a"></label><br />
-          <input type="radio" id="b" name="options" value="" />
-          <label for="b"></label><br />
-          <input type="radio" id="c" name="options" value="" />
-          <label for="c"></label> <br />
-          <input type="radio" id="d" name="options" value="" />
-          <label for="d"></label><br />
+          <input type="radio" id="1" name="options" value="" />
+          <label for="1"></label><br />
+          <input type="radio" id="2" name="options" value="" />
+          <label for="2"></label><br />
+          <input type="radio" id="3" name="options" value="" />
+          <label for="3"></label> <br />
+          <input type="radio" id="4" name="options" value="" />
+          <label for="4"></label><br />
         </div>
       </div>
-      <input type="submit" id="button" />
+      <button id="button">Submit</button>
     </form>
   </body>
 </html>
