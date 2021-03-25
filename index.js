@@ -145,9 +145,3 @@ function selectQuestions() {
   }
   return selectedQuestion;
 }
-
-function displayQuestions() {
-  console.log(selectQuestions());
-}
-
-displayQuestions();
