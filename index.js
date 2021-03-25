@@ -149,9 +149,16 @@ function generateQuestions() {
 function renderFirstQuestion(q) {
   let element = document.getElementById("question");
   element.children[0].innerHTML = q.q;
+  element.children[1].setAttribute("value", q.option1);
   element.children[2].innerHTML = q.option1;
+
+  element.children[4].setAttribute("value", q.option2);
   element.children[5].innerHTML = q.option2;
+
+  element.children[7].setAttribute("value", q.option3);
   element.children[8].innerHTML = q.option3;
+
+  element.children[10].setAttribute("value", q.option4);
   element.children[11].innerHTML = q.option4;
 
   console.log(element);
