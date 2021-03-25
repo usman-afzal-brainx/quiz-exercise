@@ -170,7 +170,7 @@ function cloneElement() {
     var cln = element.cloneNode(true);
     cln.id = `question:${i + 1}`;
 
-    cln.children[0] = q[i].q;
+    cln.children[0].innerHTML = q[i].q;
 
     cln.children[1].name = i;
     cln.children[4].name = i;
