@@ -125,7 +125,7 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 15);
 }
 
-function selectQuestions() {
+function generateQuestions() {
   let i = 0;
   let questionIndex = [];
   let selectedQuestion = [];
@@ -146,12 +146,53 @@ function selectQuestions() {
   return selectedQuestion;
 }
 
+function renderFirstQuestion(q) {
+  let element = document.getElementById("question");
+  element.children[0].innerHTML = q.q;
+  element.children[2].innerHTML = q.option1;
+  element.children[5].innerHTML = q.option2;
+  element.children[8].innerHTML = q.option3;
+  element.children[11].innerHTML = q.option4;
+
+  console.log(element);
+}
+
 function cloneElement() {
   let i = 1;
-  let len = selectQuestions().length;
+  let len = generateQuestions().length;
+  let j = 0;
+
+  let q = generateQuestions();
+  renderFirstQuestion(q[0]);
+
   while (i < len) {
     var element = document.getElementById("question");
     var cln = element.cloneNode(true);
+    cln.id = `question:${i + 1}`;
+
+    cln.children[0] = q[i].q;
+
+    cln.children[1].name = i;
+    cln.children[4].name = i;
+    cln.children[7].name = i;
+    cln.children[10].name = i;
+
+    cln.children[1].id = ++j;
+    cln.children[2].setAttribute("for", j);
+    cln.children[2].innerHTML = q[i].option1;
+
+    cln.children[4].id = ++j;
+    cln.children[5].setAttribute("for", j);
+    cln.children[5].innerHTML = q[i].option2;
+
+    cln.children[7].id = ++j;
+    cln.children[8].setAttribute("for", j);
+    cln.children[8].innerHTML = q[i].option3;
+
+    cln.children[10].id = ++j;
+    cln.children[11].setAttribute("for", j);
+    cln.children[11].innerHTML = q[i].option4;
+
     document.getElementById("main").appendChild(cln);
     i++;
   }
