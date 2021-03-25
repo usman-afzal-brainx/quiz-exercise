@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <form onsubmit="return displayChecked()">
+    <form onsubmit="event.preventDefault();getChecked();">
       <div id="main">
         <div id="question">
           <p>Question:</p>
@@ -25,5 +25,6 @@
       </div>
       <button id="button">Submit</button>
     </form>
+    <p id="answers"></p>
   </body>
 </html>

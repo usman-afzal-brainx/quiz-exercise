@@ -205,21 +205,29 @@ function populateQuestions() {
     document.getElementById("main").appendChild(cln);
     i++;
   }
+  return q;
 }
+let selectedQuestions = populateQuestions();
 
 function getChecked() {
+  let count = 0;
+  let checked = [];
   for (let i = 1; i < 17; i++) {
     let element = document.getElementById(`${i}`);
     if (element.checked === true) {
-      console.log(element.value);
+      checked.push(element.value);
     }
   }
-}
 
-function displayChecked() {
-  getChecked();
-
+  for (let i = 0; i < selectedQuestions.length; i++) {
+    if (checked[i] === selectedQuestions[i].correct) {
+      count++;
+    }
+  }
+  if (count === 4) {
+    return true;
+  }
+  document.getElementById("answers").innerHTML =
+    "You have answered " + count + " questions correctly";
   return false;
 }
-
-populateQuestions();
