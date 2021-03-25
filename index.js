@@ -145,3 +145,15 @@ function selectQuestions() {
   }
   return selectedQuestion;
 }
+
+function cloneElement() {
+  let i = 1;
+  let len = selectQuestions().length;
+  while (i < len) {
+    var element = document.getElementById("question");
+    var cln = element.cloneNode(true);
+    document.getElementById("main").appendChild(cln);
+    i++;
+  }
+}
+cloneElement();
