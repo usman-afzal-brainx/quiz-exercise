@@ -9,21 +9,45 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <form onsubmit="event.preventDefault();getChecked();">
+    <form onsubmit="event.preventDefault();displayCorrect();">
       <div id="main">
         <div id="question">
           <p>Question:</p>
-          <input type="radio" id="1" name="options" value="" />
+          <input
+            type="radio"
+            id="1"
+            onclick="setDisability()"
+            name="options"
+            value=""
+          />
           <label for="1"></label><br />
-          <input type="radio" id="2" name="options" value="" />
+          <input
+            type="radio"
+            id="2"
+            onclick="setDisability()"
+            name="options"
+            value=""
+          />
           <label for="2"></label><br />
-          <input type="radio" id="3" name="options" value="" />
+          <input
+            type="radio"
+            id="3"
+            onclick="setDisability()"
+            name="options"
+            value=""
+          />
           <label for="3"></label> <br />
-          <input type="radio" id="4" name="options" value="" />
+          <input
+            type="radio"
+            id="4"
+            onclick="setDisability()"
+            name="options"
+            value=""
+          />
           <label for="4"></label><br />
         </div>
       </div>
-      <button id="button">Submit</button>
+      <button id="button" disabled="true">Submit</button>
     </form>
     <p id="answers"></p>
   </body>

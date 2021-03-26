@@ -209,7 +209,7 @@ function populateQuestions() {
 }
 let selectedQuestions = populateQuestions();
 
-function getChecked() {
+function getCorrect() {
   let count = 0;
   let checked = [];
   for (let i = 1; i < 17; i++) {
@@ -224,10 +224,26 @@ function getChecked() {
       count++;
     }
   }
-  if (count === 4) {
-    return true;
-  }
+
+  return count;
+}
+
+function displayCorrect() {
+  let count = getCorrect();
   document.getElementById("answers").innerHTML =
     "You have answered " + count + " questions correctly";
   return false;
+}
+
+function setDisability() {
+  let count = 0;
+  for (let i = 1; i < 17; i++) {
+    let element = document.getElementById(`${i}`);
+    if (element.checked === true) {
+      count++;
+    }
+  }
+  console.log(count);
+  if (count === 4) document.getElementById("button").disabled = false;
+  else document.getElementById("button").disabled = true;
 }
